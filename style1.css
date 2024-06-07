@@ -1,0 +1,734 @@
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@300;400;500;600;700;800&family=Rajdhani:wght@300;400;500;600;700&family=Rubik:wght@300;400;500;600;700&display=swap');
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Rubik', sans-serif;
+    text-decoration: none;
+    transition: 0.3s;
+}
+*::selection {
+    background-color: #ffaa17;
+    color: #fff;
+}
+
+html body {
+    scroll-behavior: smooth;
+}
+body {
+    width: 100%;
+}
+.contanier {
+    width: 80%;
+    margin: auto;
+}
+.contanier p {
+    color: white;
+    font-weight: bold;
+    font-size: 30px;
+}
+section {
+    padding: 90px 0 40px;
+}
+.boxs {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.boxs .box {
+    width: 30%;
+}
+/* start Header */
+
+.menu-toggle {
+    display: none;
+    cursor: pointer;
+    color: white;
+}
+
+header {
+    background-color: #555;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+}
+
+header.active {
+    background-color: #1c1e22;
+    border-bottom: 1px solid #8888884a;
+}
+
+header nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+}
+
+header nav .nav-links a {
+    color: #fff;
+    margin-left: 50px;
+}
+
+header nav .nav-links a:hover,
+header nav .nav-links a.active {
+    border-bottom: 2px solid white;
+    padding-bottom: 2px;
+    transition: 0.5s;
+}
+
+h1 {
+    color: white;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.home {
+    width: 100%;
+    height: auto;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.content {
+    text-align: left; /* Align content to the left */
+    position: absolute;
+    top: 50%;
+    left: 10%; /* Adjust to position it to the left */
+    right: 10%;
+    transform: translateY(-50%);
+    z-index: 1; /* Ensure it's above the typing animation */
+}
+
+.content h1 {
+    font-size: 36px; /* Adjust font size as needed */
+    color: #333; /* Adjust color as needed */
+    margin-bottom: 20px;
+    font-weight: 500; /* Adjust font weight as needed */
+}
+
+.content p {
+    font-size: 24px; /* Adjust font size as needed */
+    color: #555; /* Adjust color as needed */
+    line-height: 1.5;
+}
+
+.content p strong {
+    font-weight: bold; /* Make the name bold */
+    color: #333; /* Adjust color as needed */
+}
+
+/* Style for the contact info */
+.contact-info {
+    margin-top: 20px;
+}
+
+.contact-info a {
+    color: #555; /* Adjust color as needed */
+    font-size: 24px;
+    margin-right: 15px;
+}
+
+.contact-info a:hover {
+    color: #333; /* Adjust hover color as needed */
+}
+
+/* Style for the resume button */
+.resume-button {
+    margin-top: 20px;
+}
+
+.resume-button a {
+    display: inline-block;
+    background-color: #555;
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 18px;
+    font-weight: 500;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.resume-button a:hover {
+    background-color: #e09e00; /* Darker shade on hover */
+}
+
+/* About Me Section */
+.about-me {
+    padding: 40px;
+    background-color: #f4fbfb; /* Light background color */
+    color: #333; /* Text color */
+    border-radius: 8px; /* Rounded corners */
+    margin: 40px auto; /* Center the section */
+    max-width: 1200px; /* Max width for better readability */
+}
+
+.about-me h2 {
+    font-size: 30px;
+    margin-bottom: 20px;
+    text-align: center;
+    text-decoration: underline;
+}
+.about-me h4
+{
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-decoration: underline;
+}
+
+.about-me p {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 10px;
+    text-align: justify;
+}
+
+.about-me p strong {
+    font-weight: bold;
+    color: #555;
+}
+
+.about-me h3 {
+    font-size: 24px;
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
+
+.education-item {
+    margin-bottom: 20px;
+}
+
+.education-item h3 {
+    font-size: 20px;
+    margin-bottom: 5px;
+    display: flex;
+    align-items: center;
+}
+
+.education-item h3 i {
+    margin-right: 10px;
+    color: #555;
+}
+
+.education-item p {
+    font-size: 16px;
+    color: #555;
+}
+
+.education-item p span {
+    color: #999;
+    font-size: 16px;
+}
+/* Experience */
+
+.experience {
+    padding: 40px;
+    background-color: #f4fbfb; /* Light background color */
+    color: #333; /* Text color */
+    border-radius: 8px; /* Rounded corners */
+    margin: 40px auto; /* Center the section */
+    max-width: 1200px; /* Max width for better readability */
+}
+.experience-item {
+    margin-bottom: 20px;
+    opacity: 0; /* Start hidden */
+    transform: translateY(20px); /* Start slightly below */
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.experience-item.visible {
+    opacity: 1; /* Become visible */
+    transform: translateY(0); /* Move to original position */
+}
+
+.experience h2 {
+    font-size: 30px;
+    margin-bottom: 20px;
+    text-align: center;
+    text-decoration: underline;
+}
+
+.experience h3 {
+    font-size: 20px;
+    font-weight: 500;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.experience-item {
+    background-color: white;
+    padding: 15px;
+    font-size: 15px;
+    font-weight: 300;
+    border-radius: 6px;
+    color: #333; /* Set text color to match background */
+    text-align: left; /* Align text to the left */
+    margin-bottom: 20px; /* Increase space between items */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+
+.experience-item ul {
+    padding-left: 20px; /* Adjust the left padding as needed */
+    margin-bottom: 10px;
+}
+
+.experience-item ul li {
+    margin-bottom: 5px; /* Adjust the bottom margin as needed */
+}
+
+
+
+/* Skills */
+
+.skill {
+    padding: 40px;
+    background-color: #f4fbfb; /* Light background color */
+    color: #333; /* Text color */
+    border-radius: 8px; /* Rounded corners */
+    margin: 40px auto; /* Center the section */
+    max-width: 1200px; /* Max width for better readability */
+}
+
+.skill h2 {
+  font-size: 30px;
+    margin-bottom: 20px;
+    text-align: center;
+    text-decoration: underline;
+}
+
+.tools
+{
+    margin-left: 100px;
+    margin-right: 100px;
+}
+.tool-pair {
+    display: flex;
+    justify-content: center; /* Center the pairs of tools */
+    margin-bottom: 10px; /* Reduce space between pairs */
+}
+
+.tool-list {
+    width: 50%; /* Each list takes up 50% of the width */
+    box-sizing: border-box; /* Include padding and border in the width */
+    padding: 0 10px; /* Reduce horizontal padding */
+}
+
+.tool-item {
+    background-color: white;
+    padding: 15px;
+    font-size: 15px;
+    font-weight: 300;
+    border-radius: 6px;
+    color: black;
+    text-align: center;
+    margin-bottom: 10px; /* Reduce space between items */
+    height: 150px; /* Set a fixed height for all tool items */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.tool-item img {
+    width: 50px;
+    height: 50px;
+    font-size: 30px;
+    margin-bottom: 9px;
+    margin-top: 15px;
+}
+
+.tool-item h2 {
+    font-size: 15px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    text-decoration: none;
+}
+.tools
+{
+    margin-left: 120px;
+    margin-right: 120px;
+}
+.tool-pair-1 {
+    display: flex;
+    justify-content: center; /* Center the pairs of tools */
+    margin-bottom: 10px; /* Reduce space between pairs */
+}
+.tool-list-1 {
+    width: 20%;
+    box-sizing: border-box; /* Include padding and border in the width */
+    padding: 0 10px; /* Reduce horizontal padding */
+}
+
+.tool-item-1 {
+    background-color: white;
+    padding: 15px;
+    font-size: 15px;
+    font-weight: 300;
+    border-radius: 6px;
+    color: black;
+    text-align: center;
+    margin-bottom: 10px; /* Reduce space between items */
+    height: 150px; /* Set a fixed height for all tool items */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.tool-item-1 img {
+    width: 50px;
+    height: 50px;
+    font-size: 30px;
+    margin-bottom: 9px;
+    margin-top: 15px;
+}
+
+.tool-item-1 h2 {
+    font-size: 15px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    text-decoration: none;
+}
+.tool-item.visible,
+.tool-item-1.visible {
+    opacity: 1; /* Become visible */
+    transform: translateY(0); /* Move to original position */
+}
+
+
+.tool-item, .tool-item-1
+{
+    pacity: 0; /* Start hidden */
+    transform: scale(0.8); /* Start slightly below */
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+@media screen and (max-width: 768px) {
+    .tools {
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+
+    .tool-list {
+        width: 100%; /* Each list takes up 100% of the width */
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .skill {
+        padding: 20px;
+    }
+
+    .tool-item,
+    .tool-item-1 {
+        height: 100%; /* Allow height to adjust based on content */
+    }
+}
+/* Contact Me Section */
+.contact-me {
+    padding: 40px;
+    background-color: #f4fbfb; /* Light background color */
+    color: #333; /* Text color */
+    border-radius: 8px; /* Rounded corners */
+    margin: 40px auto; /* Center the section */
+    max-width: 1200px; /* Max width for better readability */
+}
+
+.contact-me h2 {
+    font-size: 30px;
+    margin-bottom: 20px;
+    text-align: center;
+    text-decoration: underline;
+}
+.contact-me h4
+{
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-decoration: underline;
+}
+
+.contact-me p {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 10px;
+    text-align: justify;
+}
+
+.contact-me p strong {
+    font-weight: bold;
+    color: #555;
+}
+
+.contact-info {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.contact-info li {
+    font-size: 16px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.contact-info li i {
+    margin-right: 10px;
+}
+
+/* Style the icons */
+.contact-info li i {
+    font-size: 20px;
+    color: #555;
+}
+
+/* Footer */
+
+.to-top {
+    background: #7e7e7e;
+    position: fixed;
+    left: 90%;
+    transform: translateX(-50%);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 37px;
+    color: white;
+    text-decoration: none;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.4s, bottom 0.4s;
+    cursor: pointer;
+}
+
+.to-top.active {
+    bottom: 10px;
+    opacity: 1;
+    pointer-events: auto;
+}
+
+footer {
+    background-color: #555; /* Background color */
+    padding: 10px; /* Padding around the content */
+    text-align: center; /* Align the content to the center */
+}
+
+/* Style for the footer content */
+.bottom-part-content {
+    margin: 0; /* Remove default margin */
+}
+
+/* Style for the footer heading */
+.bottom-part-content h4 {
+    font-size: 18px; /* Font size */
+    color: white; /* Text color */
+}
+
+/* Style for the footer paragraph */
+.bottom-part-content p {
+    font-size: 14px; /* Font size */
+    color: white; /* Text color */
+    margin-top: 10px;
+}
+
+/* Add this media query to your existing CSS */
+
+/* Media query for screens smaller than 768px */
+@media (max-width: 767px) {
+   .menu-toggle {
+        display: block;
+    }
+
+    .nav-links {
+        background: transparent;
+        transition: .5s;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links a {
+        margin: 3px 0;
+    }
+  header nav .nav-links {
+        display: none; /* Hide the navigation links by default on smaller screens */
+        flex-direction: column; /* Stack links vertically */
+        position: absolute;
+        top: 40px; /* Position the dropdown below the header */
+        right: 0;
+        background: #555;
+        padding: 10px;
+        z-index: 999; /* Ensure dropdown is above other content */
+    }
+
+    header nav .nav-links a {
+        display: block; /* Ensure links are stacked vertically */
+        margin: 10px 0; /* Add some vertical spacing between links */
+    }
+
+    /* Toggle button */
+    #btn-menu {
+        display: block; /* Show the menu button */
+        color: #fff;
+        font-size: 24px;
+        cursor: pointer;
+
+    }
+
+}
+
+
+
+
+/* For screens greater than 768px wide */
+@media screen and (min-width: 769px) {
+    .menu-toggle {
+        display: none; /* Hide menu toggle button */
+    }
+
+    header nav {
+        flex-direction: row; /* Display navigation links horizontally */
+    }
+
+    .nav-links {
+        display: flex; /* Show nav links */
+        justify-content: space-between; /* Space out navigation links */
+    }
+}
+
+/* For screens up to 768px wide */
+@media screen and (max-width: 768px) {
+    .home {
+        padding-top: 50px; /* Add padding to the top to avoid overlapping with the navigation bar */
+    }
+
+    .content {
+        padding-top: 70px; /* Add padding */
+    }
+
+    .content h1 {
+        font-size: 24px; /* Reduce font size */
+        margin-bottom: 10px; /* Adjust spacing */
+    }
+
+    .content p {
+        font-size: 16px; /* Reduce font size */
+        line-height: 1.4; /* Adjust line height */
+        margin-bottom: 20px; /* Adjust spacing */
+    }
+
+    .contact-info {
+        margin-top: 20px; /* Add space between contact info and content */
+    }
+
+    .contact-info a {
+        font-size: 18px; /* Adjust font size */
+    }
+
+    .resume-button {
+        margin-top: 20px; /* Add space below contact info */
+    }
+
+    .resume-button a {
+        font-size: 16px; /* Adjust font size */
+    }
+
+    .tools
+    {
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+    .tool-pair {
+        display: flex;
+        justify-content: center; /* Center the pairs of tools */
+        margin-bottom: 15px; /* Reduce space between pairs */
+    }
+
+    .tool-list {
+        width: 30%; /* Each list takes up 50% of the width */
+        box-sizing: border-box; /* Include padding and border in the width */
+        padding: 0 10px; /* Reduce horizontal padding */
+        align-items: center;
+        text-align: center;
+    }
+
+    .tool-item {
+        background-color: white;
+        padding: 10px;
+        font-size: 15px;
+        font-weight: 300;
+        border-radius: 6px;
+        color: black;
+        text-align: center;
+        align-items: center;
+        margin-bottom: 5px; /* Reduce space between items */
+        height: 160px; /* Set a fixed height for all tool items */
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .tools-1
+    {
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+    .tool-pair-1 {
+        display: flex;
+        justify-content: center; /* Center the pairs of tools */
+        margin-bottom: 15px; /* Reduce space between pairs */
+    }
+
+    .tool-list-1 {
+        width: 35%; /* Each list takes up 50% of the width */
+        box-sizing: border-box; /* Include padding and border in the width */
+        padding: 0 10px; /* Reduce horizontal padding */
+        align-items: center;
+        text-align: center;
+    }
+
+    .tool-item-1 {
+        background-color: white;
+        padding: 10px;
+        font-size: 15px;
+        font-weight: 300;
+        border-radius: 6px;
+        color: black;
+        text-align: center;
+        align-items: center;
+        margin-bottom: 5px; /* Reduce space between items */
+        height: 160px; /* Set a fixed height for all tool items */
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+}
+
+/* For screens up to 480px wide */
+@media screen and (max-width: 480px) {
+    .home {
+        padding-top: 80px; /* Further adjust padding to avoid overlapping */
+    }
+
+    .content h1 {
+        font-size: 20px; /* Further reduce font size */
+        margin-bottom: 8px; /* Adjust spacing */
+    }
+
+    .content p {
+        font-size: 14px; /* Further reduce font size */
+        line-height: 1.3; /* Adjust line height */
+        margin-bottom: 15px; /* Adjust spacing */
+    }
+
+    .contact-info a {
+        font-size: 16px; /* Adjust font size */
+    }
+
+    .resume-button a {
+        font-size: 14px; /* Adjust font size */
+    }
+}
+
+
+
